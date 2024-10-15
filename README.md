@@ -63,17 +63,16 @@ As long as the `strip` command is availabe (typically installed from the bintool
 ## Size Reduction
 
 **Default AWS CLI**
-Zipped  - 64M
-Unzipped - 237M
+- Zipped  - 64M
+- Unzipped - 237M
 
 **Minified AWS CLI** 
+- Zipped - 20M 
+- Unzipped - 48M
 
-With only sqs, sns, s3, iam, rds & ecs enabled
+With only sqs, sns, s3, iam, rds & ecs enabled `zip -9 -r aws.min.zip aws`
 
-`zip -9 -r aws.min.zip aws`
 
-Zipped - 20M 
-Unzipped - 48M
 
 ## TODO
 - Look at removing other binaries if present in the base image
