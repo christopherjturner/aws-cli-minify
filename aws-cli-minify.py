@@ -9,7 +9,6 @@ import sys
 #       Maybe check if the libs exist elsewhere in the os.
 files_to_remove = [
     "aws_completer",
-    "libsqlite3.so.0",
     "awscli/data/ac.index",
 ]
 
@@ -120,7 +119,8 @@ def minify(base_dir, to_keep):
     clean_endpoints(base_dir, to_keep)
     minify_json(base_dir)
     delete_files(base_dir, files_to_remove)
-    strip_files(base_dir)
+    if can_strip_files():
+        strip_files(base_dir)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Minify the aws cli.')
